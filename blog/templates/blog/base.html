@@ -1,0 +1,66 @@
+{% load staticfiles %}
+<!doctype html>
+<html>
+<head>
+<meta charset="gb2312">
+<title>
+{% block title %}
+    BASE
+{% endblock %}
+
+</title>
+<meta name="keywords" content="机器学习, 人工智能, 学习交流, 博客记录" />
+<meta name="description" content="机器学习, 人工智能, 学习交流, 博客记录, Web开发" />
+<link href="{% static 'blog/css/base.css' %}" rel="stylesheet">
+<link href="{% static 'blog/css/index.css' %}" rel="stylesheet">
+<script type="text/javascript" src="{% static 'blog/js/jquery.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'blog/js/sliders.js' %}"></script>
+<!--[if lt IE 9]>
+<script src="js/modernizr.js"></script>
+<![endif]-->
+<!-- 返回顶部调用 begin -->
+<script type="text/javascript" src="{% static 'blog/js/up/jquery.js' %}"></script>
+<script type="text/javascript" src="{% static 'blog/js/up/js.js' %}"></script>
+<!-- 返回顶部调用 end-->
+</head>
+<body>
+<header>
+  <div class="logo f_l"> <a href="/"><img src="{% static 'blog/images/logo.png' %}"></a> </div>
+  <nav id="topnav" class="f_r">
+    
+    <ul>
+      <a href="/blog/" target="_blank">首页</a> 
+
+    {% block lanmu %}
+
+    {% endblock %}
+
+    <a href="news.html" target="_blank">关于我</a> 
+    </ul>
+    <script src="{% static 'blog/js/nav.js' %}"></script> 
+  </nav>
+</header>
+<article>
+
+
+{% block content %}
+  
+  {% endblock%}
+  
+  
+ {% block  right %}
+  
+  {% endblock %}
+  <!--r_box end --> 
+</article>
+
+
+<footer>
+  <p class="ft-copyright">网站实例 Design by </a href="http://www.yangqq.com">DanceSmile</a> 蜀ICP备11002373号-1</p>
+  <div id="tbox"> <a id="togbook" href="/"></a> <a id="gotop" href="javascript:void(0)"></a> </div>
+</footer>
+
+
+</body>
+</html>
+
