@@ -12,6 +12,9 @@ urlpatterns = [
     # 
     url(r'^tag/(?P<tag_id>[0-9]+)/$', views.page, name='blog_page'),
     
+    # 分页
+    url(r'^tag/(?P<tag_id>[0-9]+)/index_(?P<page>[0-9]+)/$', views.split_page, name='blog_page'),
+
     # 详情页页面
     url(r'^detail/(?P<article_id>[0-9]+)/$', views.detail, name='blog_detail'),
     

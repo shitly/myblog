@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'b5004ji!k&#3k0y9ba6ls_9rqbr4^=ie3m5w_dhyj$keeb(g9+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
 
@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'DjangoUeditor',
 	'blog',
-    #'weixin',
+    'wechart',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -84,9 +84,9 @@ WSGI_APPLICATION = 'minicms.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'blog',
+        'NAME': 'blog706',
         'USER': 'root',
-        'PASSWORD': '112233..',
+        'PASSWORD': '123456',
         'HOST': "localhost",
     }
 }
@@ -146,8 +146,8 @@ STATICFILES_FINDERS = (
 )
 
 WECHAT_TOKEN = "actanble"
-WEIXIN_APPID = 'wx20789eeb8fef589f '
-WEIXIN_APPSECRET = '632c4e81e7fd214a6bf4f05c24ad9ef5'
+WEIXIN_APPID = 'wxf544fba794e27792'
+WEIXIN_APPSECRET = '93b912d892852d22c73f1f5379e9187b'
 
 
 MOBILE_USERAGENTS = ("2.0 MMP","240x320","400X240","AvantGo","BlackBerry",
@@ -160,11 +160,13 @@ MOBILE_USERAGENTS = ("2.0 MMP","240x320","400X240","AvantGo","BlackBerry",
     "WinWAP","YahooSeeker/M1A1-R2D2","iPhone","iPod","Android",
     "BlackBerry9530","LG-TU915 Obigo","LGE VX","webOS","Nokia5800")
 
+'''
+
 
 # 自定义日志输出信息
 LOGGING = {
     'version': 1,
-    'disable_existing_loggers': True,
+    'disable_existing_loggers': False,
     'formatters': {
         'standard': {
             'format': '%(asctime)s [%(threadName)s:%(thread)d] [%(name)s:%(lineno)d] [%(module)s:%(funcName)s] [%(levelname)s]- %(message)s'}  #日志格式
@@ -240,6 +242,7 @@ LOGGING = {
 }
 
 
+'''
 # send_email 设置
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
@@ -255,3 +258,4 @@ DEFAULT_FROM_EMAIL = 'm13429888211@163.com'
 
 # python -m smtpd -n -c DebuggingServer localhost:1025
 
+split = 7

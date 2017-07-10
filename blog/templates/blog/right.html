@@ -1,0 +1,109 @@
+{% load blog_tag %}
+  <div class="r_box f_r">
+    <div class="tit01">
+      <h3>关注我</h3>
+      <div class="gzwm">
+        <ul>
+          <li><a class="xlwb" href="#" target="_blank">新浪微博</a></li>
+          <li><a class="txwb" href="#" target="_blank">腾讯微博</a></li>
+          <li><a class="rss" href="/blog/rss/" target="_blank">RSS</a></li>
+          <li><a class="wx" href="mailto:actanble@163.com">邮箱</a></li>
+        </ul>
+      </div>
+    </div>
+    <!--tit01 热点-还有个头条在下面; 切记这个为热点专题要保证大小  end-->
+    <a href = "/blog/detail/{{ right.hot.id }}/"><div class="ad300x100"> <img src="{{ right.hot.pic.url }}"> </div></a>
+    <div class="moreSelect" id="lp_right_select"> 
+      <script>
+window.onload = function ()
+{
+	var oLi = document.getElementById("tab").getElementsByTagName("li");
+	var oUl = document.getElementById("ms-main").getElementsByTagName("div");
+	
+	for(var i = 0; i < oLi.length; i++)
+	{
+		oLi[i].index = i;
+		oLi[i].onmouseover = function ()
+		{
+			for(var n = 0; n < oLi.length; n++) oLi[n].className="";
+			this.className = "cur";
+			for(var n = 0; n < oUl.length; n++) oUl[n].style.display = "none";
+			oUl[this.index].style.display = "block"
+		}	
+	}
+}
+</script>
+
+      <div class="ms-top">
+        <ul class="hd" id="tab">
+          <li class="cur"><a href="/">浏览排行</a></li>
+          <li><a href="/">最新文章</a></li>
+          <li><a href="/">站长推荐</a></li>
+        </ul>
+      </div>	  
+      <div class="ms-main" id="ms-main">
+        <div style="display: block;" class="bd bd-news" >
+          <ul>
+            {% for x in right.llph %}
+            <li><a href="/blog/detail/{{ x.id }}/" target="_blank">{{ x.title }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div  class="bd bd-news">
+          <ul>
+            {% for x in right.news %}
+            <li><a href="/blog/detail/{{ x.id }}/" target="_blank">{{ x.title }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="bd bd-news">
+          <ul>
+            {% for x in right.zztj %}
+            <li><a href="/blog/detail/{{ x.id }}/" target="_blank">{{ x.title }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+	  
+      <!--ms-main end --> 
+    </div>
+    <!--切换卡 moreSelect end -->
+    
+    <div class="cloud">
+      <h3>标签云</h3>
+      <ul>
+          
+          <!-- for tag in tags -->
+        {% for t in right.tags %}
+        <li><a href="/blog/tag/{{t.id}}">{{ t.name }}</a></li>
+        {% endfor %}
+
+      </ul>
+    </div>
+    <div class="tuwen">
+      <h3>图文推荐</h3>
+      <ul>
+	  
+     {% for y in right.twtj %}	  
+        <li><a href="/blog/detail/{{ y.id }}/"><img src="{{ y.pic.url }}"><b>{{ y.title }}</b></a>
+          <p><span class="tulanmu"><a href="/blog/tag/{{y.column.id}}/">{{ y.column }}</a>
+          </span><span class="tutime">{{ y | rq }}</span></p>
+        </li>
+     {% endfor %}
+      </ul>
+    </div>
+    <!--头条;-->
+    <a href = "/blog/detail/{{ right.topnew.id }}/"><div class="ad"> <img src="{{ right.topnew.pic.url }}"> </div></a>
+    <div class="links">
+	
+	
+      <h3>友情链接</h3>
+      <ul>
+        
+        {% for fl in right.frend_links%}
+            <li><a href="{{ fl.url }}">{{ fl.name }}</a></li>
+        {% endfor %}
+
+      </ul>
+    </div>
+  </div>

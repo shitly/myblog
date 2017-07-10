@@ -9,8 +9,15 @@ from DjangoUeditor.models import UEditorField
 # 首页图片
 @python_2_unicode_compatible
 class SliderPic(models.Model):
-    img = models.ImageField("首页图片670x280", default='uploads/blog/images/default.jpg')
+    img = models.ImageField('文章图片670x280', upload_to='uploads/blog/images/',
+                            default='uploads/blog/images/default.jpg')
     desc = models.CharField("图片描述", max_length=222, default='')
+
+    class Meta:
+        verbose_name = "首页4图670x280"
+
+    def __str__(self):
+        return self.desc
 
 
 # 栏目
@@ -55,7 +62,7 @@ class Article(models.Model):
     pub_date = models.DateTimeField(verbose_name="发表时间")
     see_num = models.IntegerField(verbose_name="浏览数")
     comment_num = models.IntegerField(default=0)
-    published = models.BooleanField("发布与否", default=True)
+    published = models.BooleanField("发布|热点F", default=True)
 
     def __str__(self):
         return self.title
@@ -63,7 +70,7 @@ class Article(models.Model):
     class Meta:
         verbose_name = 'article'
         verbose_name_plural = '文章'
-
+        ordering = ['-id']
 
 @python_2_unicode_compatible
 class Comment(models.Model):

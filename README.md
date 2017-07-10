@@ -22,6 +22,9 @@ python3 manage.py makemigrations
 可有\ python3 manage.py migrate
 可有\ python3 manage.py makemigrations
 
+## 加载静态文件
+python3 manage.py collectstatic
+
  - 无数据库下
 python3 blog\push_data.py
 python3 manage.py createsuperuser

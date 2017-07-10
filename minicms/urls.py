@@ -27,13 +27,12 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^ueditor/', include('DjangoUeditor.urls')),
 	url(r'^blog/',include('blog.urls')),
-    # url(r'^weixin/', include('weixin.urls')),
+    url(r'^weixin/', include('wechart.urls')),
 
     ##set more
     #url(r'^test1/', spyder.test),
 ]
 
-if settings.DEBUG:
-    urlpatterns += static(
+urlpatterns += static(
         settings.MEDIA_URL, document_root=settings.MEDIA_ROOT
-    )
+        )

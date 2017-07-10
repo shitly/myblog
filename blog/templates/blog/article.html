@@ -1,0 +1,78 @@
+{% load staticfiles %}
+
+
+    <!-- Bootstrap Core CSS -->
+    <link href="{% static 'blog/css/fuzhu/bootstrap.css' %}" rel="stylesheet">
+    <link href="{% static 'blog/css/fuzhu/css/Pygments.css' %}" rel="stylesheet">
+    <!-- Custom CSS: You can use this stylesheet to override any Bootstrap styles and/or apply your own styles -->
+    <link href="{% static 'blog/css/fuzhu/css/custom.css' %}" rel="stylesheet">
+
+
+	<div class="col-sm-9">		
+			<!-- Article -->
+			<div class="row">
+				<article class="col-xs-12">
+					<h2>{{ blog.title }}</h2>
+					<p class="pull-right"><a href="/blog/tag/{{ blog.column.id }}/"> <span class="label label-default">{{ blog.column }}</span></a> <span class="label label-default">{{ blog.pub_date | date:"j M" }}</span> <span class="label label-default">{{ article.author }}</span></p>
+					<p><hr></p>
+					<p>{{ blog.content | safe }}</p>					
+					<p></p>
+					<ul class="list-inline">
+
+						<li><a href=" "><span class="glyphicon glyphicon-comment"></span> {{ blog.comment_num }} Comments</a></li>
+						<li><a href=""><span class="glyphicon glyphicon-star-empty"></span>{{ blog.see_num }} 浏览</a></li>
+						<li><a href=""><span class="glyphicon glyphicon-thumbs-up"></span>0 Upvotes</a></li>
+					</ul>
+				</article>
+			</div>			
+			<hr>
+			<!-- JiaThis Button BEGIN -->
+				<div class="jiathis_style_24x24">
+					<a class="jiathis_button_qzone"></a>
+					<a class="jiathis_button_tsina"></a>
+					<a class="jiathis_button_tqq"></a>
+					<a class="jiathis_button_weixin"></a>
+					<a class="jiathis_button_renren"></a>
+					<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+					<a class="jiathis_counter_style"></a>
+				</div>
+				<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+			<!-- JiaThis Button END -->
+			<br>
+			<!-- Comments -->
+			<h3>评论:</h3>
+			<hr>
+			{% for comment in comments %}
+			<div class="row">
+				
+				<article class="col-xs-12">
+
+					<p class="pull-right"> <span class="label label-default">tag</span> <span class="label label-default">{{ comment.user }}</span></p>
+
+					<p>{{ comment.content}}</p>
+				<!-- 	<p><button class="btn btn-default">Read More</button></p>  -->
+					
+					<ul class="list-inline">
+						<li><a href=" ">{{ comment.pub_date | date:"j M" }}</a></li>
+						<li><a href=" "><span class="glyphicon glyphicon-comment"></span> {{ comment.comment_num }} Comments</a></li>
+						<li><a href=" "><span class="glyphicon glyphicon-thumbs-up"></span>{{ comment.poll_num }} Upvotes</a></li>
+					</ul>
+				</article>
+			</div>			
+			<hr>
+			{% endfor %}
+			<!-- CommentForm   -->
+			<div class="row">
+				<article class="col-xs-12">
+					<h4>发布评论:</h4>
+					<form action="#" method="post">
+						{% csrf_token %}
+						{{ commentform.as_p }}
+						<input class="btn btn-default" type="submit" value="提交" />
+					</form>
+				</article>
+			</div>			
+			<hr>
+			
+</div>
+			

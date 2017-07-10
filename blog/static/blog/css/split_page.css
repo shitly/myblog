@@ -1,0 +1,82 @@
+.navigation {
+    margin:auto auto 10px 10px;
+    float:left;
+}
+
+.wp-paginate {
+    padding:0;
+    margin:0;
+}
+
+.wp-paginate li {
+    float:left;
+    list-style:none;
+    margin:2px;
+    padding:0;
+}
+
+.wp-paginate a {
+    margin:0 2px;
+    line-height:20px;
+    text-align:center;
+    text-decoration:none;
+    border-radius:3px;
+    -moz-border-radius:3px;
+    float:left;
+    min-height:20px;
+    min-width:20px;
+    color:#858585;
+    border:2px #e3e3e3 solid;
+    border-radius:13px;
+    font-size:11px;
+}
+
+.wp-paginate a:hover {
+    border:2px #858585 solid;
+    color:#858585;
+}
+
+.wp-paginate .title {
+    color:#555;
+    margin:0;
+    margin-right:4px;
+    font-size:14px;
+}
+
+.wp-paginate .gap {
+    color:#999;
+    margin:0;
+    margin-right:4px;
+}
+
+.wp-paginate .current {
+    margin:0 2px;
+    line-height:20px;
+    text-align:center;
+    text-decoration:none;
+    border-radius:3px;
+    -moz-border-radius:3px;
+    float:left;
+    font-weight:700;
+    min-height:20px;
+    min-width:20px;
+    color:#262626;
+    border:2px #119eda solid;
+    border-radius:13px;
+    font-size:11px;
+    color:#119fff;
+}
+
+
+.wp-paginate .page {
+    margin:0;
+    padding:0;
+}
+
+.wp-paginate .prev {
+}
+
+.wp-paginate .next {
+}
+
+
