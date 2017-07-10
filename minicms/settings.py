@@ -145,9 +145,9 @@ STATICFILES_FINDERS = (
     "django.contrib.staticfiles.finders.AppDirectoriesFinder"
 )
 
-WECHAT_TOKEN = "actanble"
-WEIXIN_APPID = 'wxf544fba794e27792'
-WEIXIN_APPSECRET = '93b912d892852d22c73f1f5379e9187b'
+WECHAT_TOKEN = "actanble" # use your self-config
+WEIXIN_APPID = 'xxxxxxxxxxxxxxxxxxxxxx' # 保密
+WEIXIN_APPSECRET = '93b912xxxxxxxxx5379e9187b'  # 保密
 
 
 MOBILE_USERAGENTS = ("2.0 MMP","240x320","400X240","AvantGo","BlackBerry",
@@ -253,7 +253,7 @@ EMAIL_USE_SSL = True
 EMAIL_HOST =  'smtp.163.com' #'pop.gmail.com' #imap 993 ; pop 995; stmp 465/tls697
 EMAIL_PORT = 465
 EMAIL_HOST_USER = 'm13429888211@163.com' # jerryceron4646@gmail.com
-EMAIL_HOST_PASSWORD = 'string123'
+EMAIL_HOST_PASSWORD = 'sxxxxxxxxxx' # 保密
 DEFAULT_FROM_EMAIL = 'm13429888211@163.com'
 
 # python -m smtpd -n -c DebuggingServer localhost:1025
